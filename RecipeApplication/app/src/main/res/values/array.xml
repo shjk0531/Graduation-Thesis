@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="recipe_pat">
+        <item>전체</item>
+        <item>밥</item>
+        <item>일품</item>
+        <item>국&amp;찌개</item>
+        <item>반찬</item>
+        <item>후식</item>
+        <item>기타</item>
+    </string-array>
+
+    <string-array name="ingredient_type">
+        <item>곡류</item>
+        <item>면류</item>
+        <item>떡류</item>
+        <item>빵류</item>
+        <item>씨리얼류</item>
+        <item>감자류</item>
+        <item>기타 곡류</item>
+        <item>육류</item>
+        <item>어패류</item>
+        <item>난류</item>
+        <item>콩류</item>
+        <item>견과류</item>
+        <item>과일류</item>
+        <item>주스류</item>
+        <item>채소류</item>
+        <item>해조류</item>
+        <item>버섯류</item>
+
+
+
+    </string-array>
+</resources>

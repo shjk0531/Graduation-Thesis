@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.recipe.RecommendFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edge_bottom"
+                android:gravity="center"
+                android:text="식재료 선택"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/rcm_ingredient_open_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/edge_button"
+                android:scaleType="fitCenter"
+                android:src="@drawable/chevron_double_down"
+                app:tint="@color/ic_launcher_background" />
+
+            <ImageButton
+                android:id="@+id/rcm_ingredient_close_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/edge_button"
+                android:scaleType="fitCenter"
+                android:src="@drawable/chevron_double_up"
+                android:visibility="gone"
+                app:tint="@color/ic_launcher_background" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ingredientRecommendRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edge"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcm_recipe_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- ProgressBar의 레이아웃을 정가운데로 조정 -->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/rcm_rcp_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/edge_top_btn"
+            android:text="레시피 추천" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/rcm_loading_prg"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+</FrameLayout>

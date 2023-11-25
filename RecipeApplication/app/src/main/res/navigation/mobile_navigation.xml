@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.recipeapplication.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_ingredientList"
+        android:name="com.example.recipeapplication.ui.ingredient.IngredientListFragment"
+        android:label="내 식재료"
+        tools:layout="@layout/fragment_ingredient_list" />
+
+    <fragment
+        android:id="@+id/nav_ingredientInsert"
+        android:name="com.example.recipeapplication.ui.ingredient.IngredientInsertFragment"
+        android:label="식재료 입력"
+        tools:layout="@layout/fragment_ingredient_insert" />
+
+    <fragment
+        android:id="@+id/nav_randomRecipe"
+        android:name="com.example.recipeapplication.ui.recipe.RandomRecipeFragment"
+        android:label="랜덤 레시피"
+        tools:layout="@layout/fragment_random_recipe"/>
+
+    <fragment
+        android:id="@+id/nav_recommend"
+        android:name="com.example.recipeapplication.ui.recipe.RecommendFragment"
+        android:label="레시피 추천"
+        tools:layout="@layout/fragment_recommend"/>
+</navigation>

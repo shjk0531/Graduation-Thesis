@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_ingredientList"
+            android:icon="@drawable/list"
+            android:title="내 식재료" />
+        <item
+            android:id="@+id/nav_recommend"
+            android:icon="@drawable/restaurant"
+            android:title="@string/menu_recipe" />
+
+        <item
+            android:id="@+id/nav_ingredientInsert"
+            android:icon="@drawable/add"
+            android:title="식재료 입력" />
+
+        <item
+            android:id="@+id/nav_randomRecipe"
+            android:icon="@drawable/search"
+            android:title="랜덤 레시피" />
+
+    </group>
+</menu>

@@ -1,0 +1,205 @@
+@startuml
+'https://plantuml.com/ko/class-diagram
+
+LoginActivity ..> SignInFragment
+LoginActivity ..> SignUpFragment
+
+SignInFragment ..> SignInDB
+SignUpFragment ..SignInDB
+
+MainActivity ..> HomeFragment
+MainActivity ..> RandomFragment
+MainActivity ..> RecipeRecommendFragment
+MainActivity ..> IngredientListFragment
+MainActivity ..> IngredientInsertFragment
+
+RecipeRecommendFragment ..> RecipeRecommend
+RecipeRecommendFragment ..> IngredientDB
+RecipeRecommendFragment ..> RecipeDB
+RecipeRecommendFragment --> RecipeTitleAdapter
+
+RandomFragment ..> RecipeDB
+RandomFragment --> RecipeTitleAdapter
+
+IngredientListFragment ..> IngredientDB
+IngredientListFragment --> IngredientListAdapter
+IngredientListAdapter --> IngredientListViewHolder
+
+IngredientInsertFragment ..> IngredientDB
+
+RecipeRecommend ..> IngredientRecommend
+
+RecipeIngredientAdapter --> RecipeIngredientViewHolder
+RecipeStepAdapter --> RecipeStepViewHolder
+RecipeTitleAdapter --> RecipeTitleViewHolder
+RecipeTitleAdapter --> RecipeIngredientAdapter
+RecipeTitleAdapter --> RecipeStepAdapter
+
+RecipeDB --> MyDB
+IngredientDB --> MyDB
+SignInDB --> MyDB
+
+class MainActivity{
+AppBarConfiguration mAppBarConfiguration
+ActivityMainBinding binding
+AppBarConfiguration Builder()
+}
+
+class IngredientListFragment {
+String ingredient
+int dayCount
+String productDescription
+RecyclerView ingredientList
+getBarcodeAPI()
+}
+
+class HomeFragment {
+TextView textView
+}
+
+class RecipeRecommendFragment {
+RecyclerView recipeList
+RecyclerView ingredientList
+loadIngredients()
+searchRecipeIdsAndCalculateFrequency()
+getTopRecipeIds()
+getRecipeTitleById()
+}
+
+class RandomFragment {
+RecyclerView recipeList
+SearchView searchView
+}
+
+class IngredientInsertFragment {
+BarcodeAPI barcodeAPI
+EditText ingredientName
+EditText ingredientQuantity
+EditText ingredientExpirationDate
+TextView ingredientDate
+Spinner ingredientType
+getBarcodeAPI()
+}
+
+class RecipeDB {
+getAllRecipeTitle()
+getRecipeIdsByIngredientName()
+getRecipeTitleById()
+getRecipeStepsByRecipeId()
+getRecipeIngredientsByRecipeId()
+getNames()
+searchRecipes()
+}
+
+class IngredientDB {
+insertIngredient()
+updateIngredient()
+deleteIngredient()
+getAllIngredients()
+getIngredientTypes()
+getServings()
+}
+
+class SignInDB {
+signUp()
+checkSignIn()
+getUserId()
+checkUserExistence()
+}
+
+class RecipeRecommend {
+String[] ingredient
+recommend()
+}
+
+class IngredientRecommend {
+int index
+recommend()
+}
+
+class MyDB {
+String BASE_URL
+postData()
+getData()
+}
+
+class LoginActivity {
+loadSignInFragment()
+loadSignUpFragment()
+}
+
+class SignInFragment {
+EditText id
+EditText password
+Button signInBtn
+Button signUpBtn
+signIn()
+}
+
+class SignUpFragment {
+String id
+String password
+String name
+String email
+String phone
+checkId()
+checkPassword()
+signUp()
+}
+
+class IngredientListAdapter {
+List ingredientItems
+int id
+String name
+int expirationDate
+String buyDate
+int quantity
+String type
+setIngredientListItems()
+}
+
+class IngredientListViewHolder {
+TextView ingredientName;
+EditText IngredientExpirationDate
+EditText ingredientQuantity
+Button editBTn
+Button deleteBtn
+}
+
+class RecipeIngredientAdapter {
+List recipeIngredientList
+setRecipeIngredientList()
+}
+
+class RecipeIngredientViewHolder {
+TextView ingredientName
+TextView ingredientQuantity
+TextView ingredientType
+}
+
+class RecipeStepAdapter {
+List recipeStepList
+setRecipeStepList()
+}
+
+class RecipeStepViewHolder {
+TextView explanation
+TextView order
+ImageView image
+}
+
+class RecipeTitleAdapter {
+List recipeTitleList
+RecyclerView ingredientRecyclerView
+RecyclerView stepRecyclerView
+setRecipeTitleList()
+}
+
+class RecipeTitleViewHolder {
+TextView recipeName
+TextView recipeSummary
+ImageView recipeImage
+RecyclerView ingredientRecyclerView
+RecyclerView stepRecyclerView
+}
+@enduml
